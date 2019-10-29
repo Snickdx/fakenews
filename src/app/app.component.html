@@ -10,10 +10,13 @@
     <mat-card-header>
       <mat-card-title>
         {{item.headline}}
-        <span  *ngIf="i < count" >{{item.fake ? "FAKE" : "REAL"}}</span>
       </mat-card-title>
+      <span  *ngIf="i < count" >{{item.fake ? "FAKE" : "REAL"}}</span>
 
     </mat-card-header>
+    <mat-card-content *ngIf="i < count">
+      You Answered {{item.answer}}
+    </mat-card-content>
 
   </mat-card>
 

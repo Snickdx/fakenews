@@ -126,9 +126,11 @@ export class AppComponent implements OnInit {
 
   next(answer){
     this.count++;
+    this.current.answer = answer ? "FAKE" : "REAL";
     if(this.count < this.game_length){
         answer === this.current.fake ? this.correct++: this.correct+=0;
         this.current = this.news.pop();
+        
         this.stack.push(this.current);
     }
   }
