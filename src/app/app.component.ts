@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RoutesRecognized } from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { HttpClient } from '@angular/common/http';
-import {environment} from './environment';
+
+//{'background-color': i < count ? item.answer === item.fake ? '#db7d7d' : '#a7db88': 'white'}
 
 
 @Component({
@@ -14,79 +15,98 @@ export class AppComponent implements OnInit {
   news = [
       {
         "headline": "Students that take Latin have better chance of summoning demon later in life",
-        "fake": true
+        "fake": true,
+        "answer": null
       },
       {
         "headline": "Trump Ties Thousands of Balloons to White House Roof In Attempt to Sail Away From Impeachement Inquiery",
-        "fake": true
+        "fake": true,
+        "answer": null
       },
       {
         "headline": "Obsessed fan find Japanese idol's home by zooming into her eyes",
-        "fake": true
+        "fake": true,
+        "answer": null
       },
       {
         "headline": "Study Finds Fewer Americans Believe in Snoopy",
-        "fake": true
+        "fake": true,
+        "answer": null
       },
       {
         "headline": "Trump Flees Government Oppression By Relocating Administration To Remote Cabin Compound In Mountains Of Idaho",
-        "fake": true
+        "fake": true,
+        "answer": null
       },
       {
         "headline": "Bus Tour Takes Fans Down Iconic ‘Joker’ Stairs",
-        "fake": true
+        "fake": true,
+        "answer": null
       },
       {
         "headline": "Kidnapper Pleasantly Surprised To Find Word ‘Ransom’ In Magazine He Cutting Letters Out Of",
-        "fake": true
+        "fake": true,
+        "answer": null
       },
       {
         "headline": "Secret Service Opens Fire On Section Of Slippery Floor That Attempted To Take Out President Carter",
-        "fake": true
+        "fake": true,
+        "answer": null
       },
       {
         "headline": "Aww: Animal Experts Are Saying Cats Really Do Miss Their Owners If That’s What You Need To Hear",
-        "fake": true
+        "fake": true,
+        "answer": null
       },
       {
         "headline": "Mark Zuckerberg Announces All Of Facebook’s Future Decisions Will Be Made By The Cube Of Justice",
-        "fake": true
+        "fake": true,
+        "answer": null
       },
       {
         "headline": "Roaming Russian eagles leave scientists broke",
-        "fake": false
+        "fake": false,
+        "answer": null
       },
       {
         "headline": "Man charged with DWI after alcohol-fermenting yeast in his gut got him wasted",
-        "fake": false
+        "fake": false,
+        "answer": null
       },
       {
         "headline": "Scientists Taught Rats to Drive Tiny Cars to Earn Froot Loops",
-        "fake": false
+        "fake": false,
+        "answer": null
       },
       {
         "headline": "A RoboCop, a park and a fight: How expectations about robots are clashing with reality",
-        "fake": false
+        "fake": false,
+        "answer": null
       },
       {
         "headline": "City hopes 'Baby Shark' song will drive homeless from park",
-        "fake": false
+        "fake": false,
+        "answer": null
       },
       {
         "headline": "'Perverts in bushes' are ruining nude zone in Paris park, say naturists",
-        "fake": false
+        "fake": false,
+        "answer": null
       },
       {
         "headline": "Bangladeshi MP allegedly hired eight lookalikes to take her place in exams",
-        "fake": false
+        "fake": false,
+        "answer": null
       },
       {
         "headline": "Children over 12 face jail time for trick-or-treating in some towns",
-        "fake": false
+        "fake": false,
+        "answer": null
       },
       {
         "headline": "Student Hacked Into Downingtown Area School District System To Gain Competitive Advantage In Water Gun Fight, Officials Say",
-        "fake": false
+        "fake": false,
+        "answer": null
       },
       {
         "headline": "‘Most ridiculous thing ever’: Officials split building in two to solve property dispute",
@@ -126,7 +146,7 @@ export class AppComponent implements OnInit {
 
   next(answer){
     this.count++;
-    this.current.answer = answer ? "FAKE" : "REAL";
+    this.current.answer = answer;
     if(this.count < this.game_length){
         answer === this.current.fake ? this.correct++: this.correct+=0;
         this.current = this.news.pop();
