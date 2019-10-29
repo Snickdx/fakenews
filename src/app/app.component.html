@@ -1,0 +1,54 @@
+<mat-toolbar color="primary" style="margin-bottom: 10px">
+  <span>Fake News Spotter</span>
+  <span style=" flex: 1 1 auto;"></span>
+
+  
+</mat-toolbar>
+
+  <mat-card [ngStyle]="{'background-color': i < count ? item.fake ? '#db7d7d' : '#a7db88': 'white'}" class="example-card" style="margin:5px" *ngFor="let item of stack; index as i" >
+
+    <mat-card-header>
+      <mat-card-title>
+        {{item.headline}}
+        <span  *ngIf="i < count" >{{item.fake ? "FAKE" : "REAL"}}</span>
+      </mat-card-title>
+
+    </mat-card-header>
+
+  </mat-card>
+
+   <div class="example-button-row" style="padding:25px;">
+
+     <mat-grid-list *ngIf="this.count < this.game_length" cols="2" rowHeight="50px">
+      <mat-grid-tile
+          colspan="1"
+          rowspan="1"
+      >
+        <button style="width:100%" (click)="next(false)" mat-raised-button color="primary">Real</button>
+      </mat-grid-tile>
+      <mat-grid-tile
+          colspan="1"
+          rowspan="1"
+      >
+        <button style="width:100%" (click)="next(true)" mat-raised-button color="warn">Fake</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list *ngIf="this.count == this.game_length" cols="2" rowHeight="50px">
+      <mat-grid-tile
+          colspan="1"
+          rowspan="1"
+      >
+        You Scored {{correct}}/23 !
+      </mat-grid-tile>
+      <mat-grid-tile
+          colspan="1"
+          rowspan="1"
+      >
+        <button style="width:100%" (click)="reset()" mat-raised-button color="primary">Restart</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+    
+      
+    
+    </div>
