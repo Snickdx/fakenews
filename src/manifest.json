@@ -1,0 +1,22 @@
+{
+	"lang" : "English",
+	"name" : "Fake News Spotter",
+	"scope" : "/",
+	"display" : "fullscreen",
+	"start_url" : "index.html",
+	"short_name" : "Fake News",
+	"theme_color" : "#8080ff",
+	"description" : "Fake news spotting applications",
+	"orientation" : "portrait",
+	"background_color" : "#8080ff",
+	"icons" : [
+        {
+            "src":"./assets/fake-news.png",
+            "sizes":"512x512"
+        },
+        {
+            "src":"./assets/152x152.png",
+            "sizes":"152x152"
+        }
+    ]
+}
